@@ -22,7 +22,8 @@ import { HomeComponent } from './home/home.component';
       path: '',
       component: CustomerComponent,
       children:[
-        { path: '', pathMatch: 'full', component: HomeComponent },
+        { path: '', pathMatch: 'full', redirectTo: 'home' },
+        { path: 'home', component: HomeComponent },
         { path: 'about', component: AboutComponent},
       ]
     }]),

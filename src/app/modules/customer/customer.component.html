@@ -1,4 +1,17 @@
-<div>
-    <app-header></app-header>
-    <router-outlet></router-outlet>
-</div>
+
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer mode="over" class="drawer">
+        <ul class="main_menu_mobile">
+            <li *ngFor="let link of links" class="zoom">
+                <a [routerLink]="link.link" routerLinkActive="nav-active" (click)="close()"
+                    #rla="routerLinkActive">{{ link.label}}</a>
+            </li>
+        </ul>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div>
+            <app-header (show)="onShow($event)"></app-header>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

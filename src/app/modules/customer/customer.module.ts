@@ -9,6 +9,10 @@ import { CarouselComponent } from 'src/app/shared/carousel/carousel.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class CustomerModule { }
