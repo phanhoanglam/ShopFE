@@ -2,6 +2,15 @@
     .header_desktop {
         display: none !important;
     }
+    .header_mobile {
+        position: fixed;
+        width: 100%;
+        z-index: 1100;
+        box-shadow: 0 5px 15px 5px rgba(0,0,0,0.2);
+    }
+    .header{
+        height: 81px !important;
+    }
 }
 
 @media only screen and (min-width: 769px) {
@@ -11,6 +20,12 @@
     .header_mobile {
         display: none !important;
     }
+    .header_desktop {
+        position: fixed;
+        width: 100%;
+        z-index: 1100;
+        box-shadow: 0 5px 15px 5px rgba(0,0,0,0.2);
+    }
 }
 
 @media only screen and (max-width: 426px) {
@@ -19,7 +34,11 @@
     }
 }
 
-.nav-active{
+.header {
+    height: 130px;
+}
+
+.nav-active {
     color: red !important;
 }
 

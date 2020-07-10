@@ -2,16 +2,17 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CarouselComponent } from 'src/app/shared/carousel/carousel.component';
 import { AnimationType } from 'src/app/shared/carousel/carousel.animations';
 import { Slide } from 'src/app/shared/carousel/carousel.interface';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
 
-
   constructor(){}
+
   // @ViewChild(CarouselComponent, {static: false}) carousel: CarouselComponent;
 
   // animationType = AnimationType.Fade;
