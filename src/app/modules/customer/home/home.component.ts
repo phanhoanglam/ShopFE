@@ -1,7 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CarouselComponent } from 'src/app/shared/carousel/carousel.component';
-import { AnimationType } from 'src/app/shared/carousel/carousel.animations';
-import { Slide } from 'src/app/shared/carousel/carousel.interface';
 import * as $ from 'jquery';
 
 @Component({

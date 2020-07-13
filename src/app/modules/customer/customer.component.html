@@ -1,6 +1,7 @@
 
 <mat-drawer-container class="example-container main_container">
-    <mat-drawer #drawer mode="over" class="drawer">
+    <mat-drawer #drawer mode="over" class="drawer" style="position: fixed;">
+        <a class="logo" href="#"><img class="logoImg" src="../../../../../assets/images/icons/logo.png" /></a>
         <ul class="main_menu_mobile">
             <li *ngFor="let link of links" class="zoom">
                 <a [routerLink]="link.link" routerLinkActive="nav-active" (click)="close()"
@@ -12,6 +13,8 @@
         <div>
             <app-header (show)="onShow($event)"></app-header>
             <router-outlet></router-outlet>
+            <app-footer></app-footer>
+            <app-scroll-to-top></app-scroll-to-top>
         </div>
     </mat-drawer-content>
 </mat-drawer-container>

@@ -1,0 +1,179 @@
+.bg6 {
+    background-color: #f0f0f0;
+}
+
+.p-r-45 {
+    padding-right: 45px;
+}
+
+.p-l-45 {
+    padding-left: 45px;
+}
+
+.p-b-43 {
+    padding-bottom: 43px;
+}
+
+.p-t-45 {
+    padding-top: 45px;
+}
+
+.flex-w {
+    display          : -webkit-box;
+    display          : -webkit-flex;
+    display          : -moz-box;
+    display          : -ms-flexbox;
+    display          : flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap   : wrap;
+    -ms-flex-wrap    : wrap;
+    -o-flex-wrap     : wrap;
+    flex-wrap        : wrap;
+}
+
+.p-b-90 {
+    padding-bottom: 50px;
+}
+
+.w-size6 {
+    width     : 100%;
+    text-align: center;
+}
+
+.p-r-15 {
+    padding-right: 15px;
+}
+
+.p-l-15 {
+    padding-left: 15px;
+}
+
+.p-t-30 {
+    padding-top: 30px;
+}
+
+.s-text12 {
+    font-family   : Montserrat-Bold;
+    font-size     : 18px;
+    color         : #222222;
+    line-height   : 1.5;
+    text-transform: uppercase;
+}
+
+.p-b-30 {
+    padding-bottom: 10px;
+}
+
+.w-size27 {
+    max-width: 100%;
+}
+
+.s-text7 {
+    font-family: Montserrat-Regular;
+    font-size  : 14px;
+    color      : #555555;
+    line-height: 1.8;
+}
+
+p {
+    font-family: Montserrat-Regular;
+    font-size  : 15px;
+    line-height: 1.7;
+    color      : #888888;
+    margin     : 0px;
+}
+
+.flex-m {
+    display           : -webkit-box;
+    display           : -webkit-flex;
+    display           : -moz-box;
+    display           : -ms-flexbox;
+    /* display        : flex; */
+    -ms-align-items   : center;
+    align-items       : center;
+}
+
+.p-t-30 {
+    padding-top: 30px;
+}
+
+.p-t-20 {
+    margin-top: 15px;
+}
+
+.color1 {
+    color: #888888;
+}
+
+.p-r-20 {
+    padding-right: 20px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.s-text8,
+.s-text8 a {
+    font-family: Montserrat-Regular;
+    font-size  : 14px;
+    color      : #888888;
+    line-height: 1.8;
+}
+
+.a-text {
+    color          : green !important;
+    text-decoration: none;
+}
+
+.a-text:hover {
+    color          : orange !important;
+    text-decoration: none;
+}
+
+.fa {
+    display                : inline-block;
+    font                   : normal normal normal 14px/1 FontAwesome;
+    font-size              : inherit;
+    text-rendering         : auto;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration        : none;
+}
+
+.fa:hover {
+    color: red;
+}
+
+a {
+    font-family       : Montserrat-Regular;
+    font-weight       : 400;
+    font-size         : 15px;
+    line-height       : 1.7;
+    color             : #666666;
+    margin            : 0px;
+    transition        : all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition     : all 0.4s;
+    -moz-transition   : all 0.4s;
+}
+
+.w-size7 {
+    width: 13%;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-center>a {
+    margin: 5px;
+}
+
+.p-r-15 {
+    padding-right: 15px;
+}
+
+.p-l-15 {
+    padding-left: 15px;
+}

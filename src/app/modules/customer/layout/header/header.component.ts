@@ -6,8 +6,8 @@ import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() show = new EventEmitter<boolean>();
-
+  isShowCart: boolean = false;;
+  @Output() show = new EventEmitter<boolean>();  
   links: any[];
   constructor() { }
 
@@ -34,6 +34,10 @@ export class HeaderComponent implements OnInit {
         link: '/help'
       }
     ];
+  }
+
+  showCart(event){
+    this.isShowCart = !this.isShowCart;
   }
 
   showMenuNav(){

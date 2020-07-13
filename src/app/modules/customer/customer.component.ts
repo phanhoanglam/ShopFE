@@ -20,19 +20,19 @@ export class CustomerComponent implements OnInit  {
       },
       {
         label: 'Shop',
-        link: './shop'
+        link: '/shop'
       },
       {
         label: 'Sale',
-        link: './sale'
+        link: '/sale'
       },
       {
         label: 'About',
-        link: './about'
+        link: '/about'
       },
       {
         label: 'Help',
-        link: './help'
+        link: '/help'
       }
     ];
   }
