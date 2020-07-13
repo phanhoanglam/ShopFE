@@ -5,20 +5,22 @@
     </li>
 </ul> -->
 
-<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
-    <span *ngFor="let child of nodes">
-      <!-- Handle branch node menu items -->
-      <span *ngIf="child.children && child.children.length > 0">
-        <button [routerLink]="child.link" class="element" mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
-          <span>{{child.displayName}}</span>
-        </button>
-        <tree-menu #menu [nodes]="child.children"></tree-menu>
-      </span>
-      <!-- Handle leaf node menu items -->
-      <span *ngIf="!child.children || child.children.length === 0">
-        <button class="element" mat-menu-item [routerLink]="child.link">
-          <span>{{child.displayName}}</span>
-        </button>
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false" [hasBackdrop]="false">
+    <span (mouseenter)="mouseenter2.emit()" (mouseleave)="mouseleave2.emit();">
+      <span *ngFor="let child of nodes">
+        <!-- Handle branch node menu items -->
+        <span *ngIf="child.children && child.children.length > 0">
+          <button [routerLink]="child.link" class="element" mat-menu-item color="primary" (mouseenter)="buttonEnter(levelOneTrigger)" #levelOneTrigger="matMenuTrigger" [matMenuTriggerFor]="menu.childMenu">
+            <span>{{child.displayName}}</span>
+          </button>
+          <tree-menu (mouseenter2)="menuenter()" #menu [nodes]="child.children"></tree-menu>
+        </span>
+        <!-- Handle leaf node menu items -->
+        <span *ngIf="!child.children || child.children.length === 0">
+          <button class="element" mat-menu-item [routerLink]="child.link">
+            <span>{{child.displayName}}</span>
+          </button>
+        </span>
       </span>
     </span>
   </mat-menu>

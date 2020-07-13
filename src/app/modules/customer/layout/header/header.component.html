@@ -21,10 +21,11 @@
                     <ul class="main_menu">
                         <li *ngFor="let item of navItems" class="zoom dropdown">
                             <span *ngIf="item.children && item.children.length > 0">
-                                <a href="javascript:void(0)" [routerLink]="item.link" style="cursor: pointer;" routerLinkActive="nav-active"
-                                    [matMenuTriggerFor]="menu.childMenu" #rla="routerLinkActive">{{ item.displayName }}
+                                <a [routerLink]="item.link" style="cursor: pointer;" routerLinkActive="nav-active"
+                                    [matMenuTriggerFor]="menu.childMenu" #rla="routerLinkActive" #levelOneTrigger="matMenuTrigger" (mouseenter)="buttonEnter(levelOneTrigger)" (mouseleave)="buttonLeave(levelOneTrigger)"
+                                    >{{ item.displayName }}
                                     <mat-icon>expand_more</mat-icon></a>
-                                <tree-menu #menu [nodes]="item.children"></tree-menu>
+                                <tree-menu (mouseenter2)="menuenter()" (mouseleave2)="menuLeave(levelOneTrigger)" #menu [nodes]="item.children"></tree-menu>
                             </span>
                             <span *ngIf="!item.children || item.children.length === 0">
                                 <a [routerLink]="item.link" routerLinkActive="nav-active"

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +11,12 @@ export class HeaderComponent implements OnInit {
   navItems: any[];
   windowScrolled: boolean;
 
-  constructor() { }
+  enteredButton = false;
+  isMatMenuOpen = false;
+  isMatMenu2Open = false;
+  prevButtonTrigger;
+
+  constructor(private ren: Renderer2) { }
 
   ngOnInit() {
     this.navItems = [
@@ -111,6 +116,63 @@ export class HeaderComponent implements OnInit {
         children: [],
       },
     ];
+  }
+
+  buttonEnter(trigger) {
+    // /*
+    setTimeout(() => {
+      if (this.prevButtonTrigger && this.prevButtonTrigger != trigger) {
+        this.prevButtonTrigger.closeMenu();
+        this.prevButtonTrigger = trigger;
+        this.isMatMenuOpen = false;
+        this.isMatMenu2Open = false;
+        trigger.openMenu();
+      }
+      else if (!this.isMatMenuOpen) {
+
+        this.enteredButton = true;
+        this.prevButtonTrigger = trigger
+        trigger.openMenu()
+
+      }
+      else {
+        this.enteredButton = true;
+        this.prevButtonTrigger = trigger
+      }
+
+    })
+  }
+
+  buttonLeave(trigger) {
+    // /*
+    setTimeout(() => {
+      if (this.enteredButton && !this.isMatMenuOpen) {
+        trigger.closeMenu();
+      } if (!this.isMatMenuOpen) {
+        trigger.closeMenu();
+      } else {
+        this.enteredButton = false;
+      }
+    }, 100)
+    // */
+  }
+
+  menuenter() {
+    this.isMatMenuOpen = true;
+    if (this.isMatMenu2Open) {
+      this.isMatMenu2Open = false;
+    }
+  }
+
+  menuLeave(trigger) {
+    setTimeout(() => {
+      if (!this.isMatMenu2Open && !this.enteredButton) {
+        this.isMatMenuOpen = false;
+        trigger.closeMenu();
+      } else {
+        this.isMatMenuOpen = false;
+      }
+    }, 80)
   }
 
   @HostListener("window:scroll", [])
