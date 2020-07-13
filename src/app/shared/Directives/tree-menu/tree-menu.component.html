@@ -1,0 +1,25 @@
+<!-- <ul *ngFor="let node of nodes">
+    <li class="dropdown">
+        <span>{{ node.name }}</span>
+        <tree-menu class="dropdown-content" [nodes]="node.children"></tree-menu>
+    </li>
+</ul> -->
+
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
+    <span *ngFor="let child of nodes">
+      <!-- Handle branch node menu items -->
+      <span *ngIf="child.children && child.children.length > 0">
+        <button [routerLink]="child.link" class="element" mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
+          <span>{{child.displayName}}</span>
+        </button>
+        <tree-menu #menu [nodes]="child.children"></tree-menu>
+      </span>
+      <!-- Handle leaf node menu items -->
+      <span *ngIf="!child.children || child.children.length === 0">
+        <button class="element" mat-menu-item [routerLink]="child.link">
+          <span>{{child.displayName}}</span>
+        </button>
+      </span>
+    </span>
+  </mat-menu>
+  

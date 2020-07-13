@@ -1,3 +1,4 @@
+import { TreeMenuComponent } from './../../shared/Directives/tree-menu/tree-menu.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
@@ -14,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ScrollToTopComponent } from 'src/app/shared/Directives/ScrollToTop/scroll-to-top.component';
+import { ProductComponent } from './product/product.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { ScrollToTopComponent } from 'src/app/shared/Directives/ScrollToTop/scro
     HomeComponent,
     AboutComponent,
     FooterComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    TreeMenuComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +38,9 @@ import { ScrollToTopComponent } from 'src/app/shared/Directives/ScrollToTop/scro
     MatSidenavModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    MatSliderModule,
   ]
 })
 export class CustomerModule { }

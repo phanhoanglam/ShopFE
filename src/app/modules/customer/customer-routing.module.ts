@@ -1,3 +1,4 @@
+import { ProductComponent } from './product/product.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,10 +22,15 @@ import { HomeComponent } from './home/home.component';
     RouterModule.forChild([{
       path: '',
       component: CustomerComponent,
-      children:[
+      children: [
         { path: '', pathMatch: 'full', redirectTo: 'home' },
         { path: 'home', component: HomeComponent },
-        { path: 'about', component: AboutComponent},
+        {
+          path: 'category', children: [
+            { path: 'product', component: ProductComponent }
+          ]
+        },
+        { path: 'about', component: AboutComponent },
       ]
     }]),
   ],

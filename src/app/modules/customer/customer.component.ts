@@ -9,31 +9,101 @@ import { MatDrawer } from '@angular/material';
 })
 export class CustomerComponent implements OnInit  {
   @ViewChild('drawer', {static: false}) drawer: MatDrawer;
-  links: any[];
+  navItems: any[];
   constructor() { }
 
   ngOnInit() {
-    this.links = [
+    this.navItems = [
       {
-        label: 'Home',
-        link: ''
+        displayName: 'Trang chủ',
+        link: "",
+        children: [],
       },
       {
-        label: 'Shop',
-        link: '/shop'
+        displayName: 'Sản phẩm',
+        children: [
+          {
+            displayName: 'Speakers',
+            children: [
+              {
+                displayName: 'Michael Prentice',
+                route: 'michael-prentice',
+                children: [
+                  {
+                    displayName: 'Delight your Organization',
+                    iconName: 'star_rate',
+                    route: 'material-design'
+                  }
+                ]
+              },
+              {
+                displayName: 'Stephen Fluin',
+                route: 'stephen-fluin',
+                children: [
+                  {
+                    displayName: 'What\'s up with the Web?',
+                    iconName: 'star_rate',
+                    route: 'what-up-web'
+                  }
+                ]
+              },
+              {
+                displayName: 'Mike Brocchi',
+                route: 'mike-brocchi',
+                children: [
+                  {
+                    displayName: 'My ally, the CLI',
+                    iconName: 'star_rate',
+                    route: 'my-ally-cli'
+                  },
+                  {
+                    displayName: 'Become an Angular Tailor',
+                    iconName: 'star_rate',
+                    route: 'become-angular-tailer'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            displayName: 'Sessions',
+            children: [
+              {
+                displayName: 'Delight your Organization',
+                iconName: 'star_rate',
+                route: 'material-design'
+              },
+              {
+                displayName: 'What\'s up with the Web?',
+                iconName: 'star_rate',
+                route: 'what-up-web'
+              },
+              {
+                displayName: 'My ally, the CLI',
+                iconName: 'star_rate',
+                route: 'my-ally-cli'
+              },
+              {
+                displayName: 'Become an Angular Tailor',
+                iconName: 'star_rate',
+                route: 'become-angular-tailer'
+              }
+            ]
+          },
+        ]
       },
       {
-        label: 'Sale',
-        link: '/sale'
+        displayName: 'Hàng mới',
+        children: [],
       },
       {
-        label: 'About',
-        link: '/about'
+        displayName: 'Trợ giúp',
+        children: [],
       },
       {
-        label: 'Help',
-        link: '/help'
-      }
+        displayName: 'Liên hệ',
+        children: [],
+      },
     ];
   }
 
