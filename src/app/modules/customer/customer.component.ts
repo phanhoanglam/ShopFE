@@ -16,50 +16,52 @@ export class CustomerComponent implements OnInit  {
     this.navItems = [
       {
         displayName: 'Trang chủ',
-        link: "",
+        link: "/home",
         children: [],
       },
       {
         displayName: 'Sản phẩm',
+        // link: "/category",
         children: [
           {
             displayName: 'Speakers',
+            link: "/category/product",
             children: [
               {
                 displayName: 'Michael Prentice',
-                route: 'michael-prentice',
+                link: "/b",
                 children: [
                   {
                     displayName: 'Delight your Organization',
-                    iconName: 'star_rate',
-                    route: 'material-design'
+                    link: "/c",
+                    children: []
                   }
                 ]
               },
               {
                 displayName: 'Stephen Fluin',
-                route: 'stephen-fluin',
+                link: "/e",
                 children: [
                   {
                     displayName: 'What\'s up with the Web?',
-                    iconName: 'star_rate',
-                    route: 'what-up-web'
+                    link: "/f",
+                    children: []
                   }
                 ]
               },
               {
                 displayName: 'Mike Brocchi',
-                route: 'mike-brocchi',
+                link: "/g",
                 children: [
                   {
                     displayName: 'My ally, the CLI',
-                    iconName: 'star_rate',
-                    route: 'my-ally-cli'
+                    link: "/h",
+                    children: []
                   },
                   {
                     displayName: 'Become an Angular Tailor',
-                    iconName: 'star_rate',
-                    route: 'become-angular-tailer'
+                    link: "/j",
+                    children: []
                   }
                 ]
               }
@@ -70,23 +72,23 @@ export class CustomerComponent implements OnInit  {
             children: [
               {
                 displayName: 'Delight your Organization',
-                iconName: 'star_rate',
-                route: 'material-design'
+                link: "/k",
+                children: []
               },
               {
                 displayName: 'What\'s up with the Web?',
-                iconName: 'star_rate',
-                route: 'what-up-web'
+                link: "/l",
+                children: []
               },
               {
                 displayName: 'My ally, the CLI',
-                iconName: 'star_rate',
-                route: 'my-ally-cli'
+                link: "/z",
+                children: []
               },
               {
                 displayName: 'Become an Angular Tailor',
-                iconName: 'star_rate',
-                route: 'become-angular-tailer'
+                link: "/x",
+                children: []
               }
             ]
           },
@@ -94,14 +96,17 @@ export class CustomerComponent implements OnInit  {
       },
       {
         displayName: 'Hàng mới',
-        children: [],
+        link: "/m",
+        children: []
       },
       {
         displayName: 'Trợ giúp',
+        link: "/about",
         children: [],
       },
       {
         displayName: 'Liên hệ',
+        link: "/contact",
         children: [],
       },
     ];

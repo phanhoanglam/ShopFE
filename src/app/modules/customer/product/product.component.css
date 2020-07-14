@@ -305,7 +305,7 @@ button {
     width: 125px !important;
   }
   .container1 {
-    max-width: 750px !important;
+    width: 750px !important;
   }
   .block2-overlay {
     max-width: 84% !important;

@@ -9,15 +9,13 @@ import { MatMenuTrigger } from '@angular/material';
 export class TreeMenuComponent implements OnInit {
   @Input() nodes;
   @ViewChild('childMenu', { static: true }) public childMenu;
-  @ViewChild(MatMenuTrigger, { static: false }) trigger: MatMenuTrigger;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  closeMyMenu() {
-    this.trigger.closeMenu();
+  eventClose(trigger) {
+    trigger.closeMenu();
     console.log('close')
   }
 }

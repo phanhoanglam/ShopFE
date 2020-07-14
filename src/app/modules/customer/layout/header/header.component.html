@@ -21,7 +21,7 @@
                     <ul class="main_menu">
                         <li *ngFor="let item of navItems" class="zoom dropdown">
                             <span *ngIf="item.children && item.children.length > 0">
-                                <a style="cursor: pointer;" [routerLink]="item.link" routerLinkActive="nav-active" (mouseenter)="openMyMenu()"
+                                <a style="cursor: pointer;outline: none;" [routerLink]="item.link" routerLinkActive="nav-active" (mouseenter)="openMyMenu()"
                                     [matMenuTriggerFor]="menu.childMenu">{{ item.displayName }}
                                     <mat-icon>expand_more</mat-icon></a>
                                 <tree-menu routerLinkActive="nav-active" #menu [nodes]="item.children"></tree-menu>
@@ -44,7 +44,7 @@
                         src="../../../../../assets/images/icons/icon-header-02.png" />
                     <span class="header-icons-noti">0</span>
 
-                    <div #cart *ngIf="isShowCart" class="header-cart header-dropdown"
+                    <div #cart [ngStyle]="{'transform': isShowCart == true ? 'scale(1)' : ''}" class="header-cart header-dropdown"
                         [ngStyle]="{'transform': isShowCart == true ? 'scale(1)' : 'scale(0)'}">
                         <ul class="header-cart-wrapitem">
                             <li class="header-cart-item">

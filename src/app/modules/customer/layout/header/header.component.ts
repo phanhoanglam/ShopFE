@@ -19,12 +19,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'click', (e: Event) => {
-      console.log(e.target);
-      
-      console.log(this.cart.nativeElement.children[0]);
 
       if (this.cart !== undefined) {
-        if (e.target !== this.toggleButton.nativeElement && e.target !== this.cart.nativeElement) {
+        if (e.target !== this.toggleButton.nativeElement && !this.cart.nativeElement.contains(e.target)) {
           this.isShowCart = false;
         }
       }
