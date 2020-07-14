@@ -21,11 +21,10 @@
                     <ul class="main_menu">
                         <li *ngFor="let item of navItems" class="zoom dropdown">
                             <span *ngIf="item.children && item.children.length > 0">
-                                <a [routerLink]="item.link" style="cursor: pointer;" routerLinkActive="nav-active"
-                                    [matMenuTriggerFor]="menu.childMenu" #rla="routerLinkActive" #levelOneTrigger="matMenuTrigger" (mouseenter)="buttonEnter(levelOneTrigger)" (mouseleave)="buttonLeave(levelOneTrigger)"
-                                    >{{ item.displayName }}
+                                <a style="cursor: pointer;" [routerLink]="item.link" routerLinkActive="nav-active" (mouseenter)="openMyMenu()"
+                                    [matMenuTriggerFor]="menu.childMenu">{{ item.displayName }}
                                     <mat-icon>expand_more</mat-icon></a>
-                                <tree-menu (mouseenter2)="menuenter()" (mouseleave2)="menuLeave(levelOneTrigger)" #menu [nodes]="item.children"></tree-menu>
+                                <tree-menu routerLinkActive="nav-active" #menu [nodes]="item.children"></tree-menu>
                             </span>
                             <span *ngIf="!item.children || item.children.length === 0">
                                 <a [routerLink]="item.link" routerLinkActive="nav-active"
@@ -41,11 +40,11 @@
                 </a>
                 <span class="linedivide1"></span>
                 <div>
-                    <img (click)="showCart($event)" class="header-icon1 header-wrapicon2"
+                    <img #toggleButton (click)="showCart($event)" class="header-icon1 header-wrapicon2"
                         src="../../../../../assets/images/icons/icon-header-02.png" />
                     <span class="header-icons-noti">0</span>
 
-                    <div class="header-cart header-dropdown"
+                    <div #cart *ngIf="isShowCart" class="header-cart header-dropdown"
                         [ngStyle]="{'transform': isShowCart == true ? 'scale(1)' : 'scale(0)'}">
                         <ul class="header-cart-wrapitem">
                             <li class="header-cart-item">

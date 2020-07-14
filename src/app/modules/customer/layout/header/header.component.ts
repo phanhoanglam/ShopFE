@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, HostListener, Renderer2 } from '@angular/core';
+import { element } from 'protractor';
+import { Component, OnInit, Output, EventEmitter, HostListener, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material';
 
 @Component({
   selector: 'app-header',
@@ -11,12 +13,23 @@ export class HeaderComponent implements OnInit {
   navItems: any[];
   windowScrolled: boolean;
 
-  enteredButton = false;
-  isMatMenuOpen = false;
-  isMatMenu2Open = false;
-  prevButtonTrigger;
+  @ViewChild(MatMenuTrigger, { static: false }) trigger: MatMenuTrigger;
+  @ViewChild('toggleButton', { static: false }) toggleButton: ElementRef;
+  @ViewChild('cart', { static: false }) cart: ElementRef;
 
-  constructor(private ren: Renderer2) { }
+  constructor(private renderer: Renderer2) {
+    this.renderer.listen('window', 'click', (e: Event) => {
+      console.log(e.target);
+      
+      console.log(this.cart.nativeElement.children[0]);
+
+      if (this.cart !== undefined) {
+        if (e.target !== this.toggleButton.nativeElement && e.target !== this.cart.nativeElement) {
+          this.isShowCart = false;
+        }
+      }
+    });
+  }
 
   ngOnInit() {
     this.navItems = [
@@ -118,63 +131,6 @@ export class HeaderComponent implements OnInit {
     ];
   }
 
-  buttonEnter(trigger) {
-    // /*
-    setTimeout(() => {
-      if (this.prevButtonTrigger && this.prevButtonTrigger != trigger) {
-        this.prevButtonTrigger.closeMenu();
-        this.prevButtonTrigger = trigger;
-        this.isMatMenuOpen = false;
-        this.isMatMenu2Open = false;
-        trigger.openMenu();
-      }
-      else if (!this.isMatMenuOpen) {
-
-        this.enteredButton = true;
-        this.prevButtonTrigger = trigger
-        trigger.openMenu()
-
-      }
-      else {
-        this.enteredButton = true;
-        this.prevButtonTrigger = trigger
-      }
-
-    })
-  }
-
-  buttonLeave(trigger) {
-    // /*
-    setTimeout(() => {
-      if (this.enteredButton && !this.isMatMenuOpen) {
-        trigger.closeMenu();
-      } if (!this.isMatMenuOpen) {
-        trigger.closeMenu();
-      } else {
-        this.enteredButton = false;
-      }
-    }, 100)
-    // */
-  }
-
-  menuenter() {
-    this.isMatMenuOpen = true;
-    if (this.isMatMenu2Open) {
-      this.isMatMenu2Open = false;
-    }
-  }
-
-  menuLeave(trigger) {
-    setTimeout(() => {
-      if (!this.isMatMenu2Open && !this.enteredButton) {
-        this.isMatMenuOpen = false;
-        trigger.closeMenu();
-      } else {
-        this.isMatMenuOpen = false;
-      }
-    }, 80)
-  }
-
   @HostListener("window:scroll", [])
   onWindowScroll() {
     if (window.pageYOffset >= 50 || document.documentElement.scrollTop >= 50 || document.body.scrollTop > 100) {
@@ -185,7 +141,11 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  showCart(event) {
+  openMyMenu() {
+    this.trigger.toggleMenu();
+  }
+
+  showCart() {
     this.isShowCart = !this.isShowCart;
   }
 

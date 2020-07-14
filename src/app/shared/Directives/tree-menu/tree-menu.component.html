@@ -1,19 +1,12 @@
-<!-- <ul *ngFor="let node of nodes">
-    <li class="dropdown">
-        <span>{{ node.name }}</span>
-        <tree-menu class="dropdown-content" [nodes]="node.children"></tree-menu>
-    </li>
-</ul> -->
-
-<mat-menu #childMenu="matMenu" [overlapTrigger]="false" [hasBackdrop]="false">
-    <span (mouseenter)="mouseenter2.emit()" (mouseleave)="mouseleave2.emit();">
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
       <span *ngFor="let child of nodes">
-        <!-- Handle branch node menu items -->
+       <span>
+          <!-- Handle branch node menu items -->
         <span *ngIf="child.children && child.children.length > 0">
-          <button [routerLink]="child.link" class="element" mat-menu-item color="primary" (mouseenter)="buttonEnter(levelOneTrigger)" #levelOneTrigger="matMenuTrigger" [matMenuTriggerFor]="menu.childMenu">
+          <button [routerLink]="child.link" class="element" mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
             <span>{{child.displayName}}</span>
           </button>
-          <tree-menu (mouseenter2)="menuenter()" #menu [nodes]="child.children"></tree-menu>
+          <tree-menu #menu [nodes]="child.children"></tree-menu>
         </span>
         <!-- Handle leaf node menu items -->
         <span *ngIf="!child.children || child.children.length === 0">
@@ -21,7 +14,7 @@
             <span>{{child.displayName}}</span>
           </button>
         </span>
-      </span>
+       </span>
     </span>
   </mat-menu>
   
