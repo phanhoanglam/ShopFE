@@ -18,10 +18,10 @@
             <a class="logo" href="#"><img class="logoImg" src="../../../../../assets/images/icons/logo.png" /></a>
             <div class="wrap_menu">
                 <nav class="menu">
-                    <ul class="main_menu">
+                    <!-- <ul class="main_menu">
                         <li *ngFor="let item of navItems" class="zoom dropdown">
                             <span *ngIf="item.children && item.children.length > 0">
-                                <a style="cursor: pointer;outline: none;" [routerLink]="item.link" routerLinkActive="nav-active" (mouseenter)="openMyMenu()"
+                                <a style="cursor: pointer;outline: none;" [routerLink]="item.link" routerLinkActive="nav-active"
                                     [matMenuTriggerFor]="menu.childMenu">{{ item.displayName }}
                                     <mat-icon>expand_more</mat-icon></a>
                                 <tree-menu routerLinkActive="nav-active" #menu [nodes]="item.children"></tree-menu>
@@ -31,7 +31,8 @@
                                     #rla="routerLinkActive">{{ item.displayName }}</a>
                             </span>
                         </li>
-                    </ul>
+                    </ul> -->
+                    <tree-menu [nodes]="navItems"></tree-menu>
                 </nav>
             </div>
             <div class="header-icons">

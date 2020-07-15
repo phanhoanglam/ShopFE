@@ -1,20 +1,19 @@
-<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
-      <span *ngFor="let child of nodes">
-       <span>
-          <!-- Handle branch node menu items -->
-        <span *ngIf="child.children && child.children.length > 0">
-          <button [routerLink]="child.link" class="element" mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
-            <span>{{child.displayName}}</span>
-          </button>
-          <tree-menu #menu [nodes]="child.children"></tree-menu>
-        </span>
-        <!-- Handle leaf node menu items -->
-        <span *ngIf="!child.children || child.children.length === 0">
-          <button class="element" mat-menu-item [routerLink]="child.link">
-            <span>{{child.displayName}}</span>
-          </button>
-        </span>
-       </span>
-    </span>
-  </mat-menu>
-  
+<ul>
+  <li *ngFor="let item of nodes">
+    <button>{{ item.displayName }}</button>
+    <div *ngIf="item.children">
+      <ng-container *ngTemplateOutlet="tree; context: { $implicit: item.children }"></ng-container>
+    </div>
+  </li>
+</ul>
+
+<ng-template #tree let-array>
+  <ul>
+    <li *ngFor="let child of array">
+      <button>{{ child.displayName }}</button>
+      <div *ngIf="child.children">
+        <ng-container *ngTemplateOutlet="tree; context: { $implicit: child.children }"></ng-container>
+      </div>
+    </li>
+  </ul>
+</ng-template>

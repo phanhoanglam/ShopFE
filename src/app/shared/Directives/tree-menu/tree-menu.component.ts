@@ -9,10 +9,14 @@ import { MatMenuTrigger } from '@angular/material';
 export class TreeMenuComponent implements OnInit {
   @Input() nodes;
   @ViewChild('childMenu', { static: true }) public childMenu;
+  toggle: number;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.nodes);
+    
+  }
 
   eventClose(trigger) {
     trigger.closeMenu();

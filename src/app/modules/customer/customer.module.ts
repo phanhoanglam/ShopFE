@@ -17,6 +17,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ScrollToTopComponent } from 'src/app/shared/Directives/ScrollToTop/scroll-to-top.component';
 import { ProductComponent } from './product/product.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MatSliderModule } from '@angular/material/slider';
     FooterComponent,
     ScrollToTopComponent,
     TreeMenuComponent,
-    ProductComponent
+    ProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,
@@ -41,6 +44,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatSelectModule,
     MatMenuModule,
     MatSliderModule,
+    MatTabsModule
   ]
 })
 export class CustomerModule { }

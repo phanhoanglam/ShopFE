@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductComponent } from './product/product.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,8 @@ import { HomeComponent } from './home/home.component';
         { path: 'home', component: HomeComponent },
         {
           path: 'category', children: [
-            { path: 'product', component: ProductComponent }
+            { path: 'product', component: ProductComponent },
+            { path: 'product-detail', component: ProductDetailComponent}
           ]
         },
         { path: 'about', component: AboutComponent },
