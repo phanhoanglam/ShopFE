@@ -21,6 +21,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { MatTabsModule } from '@angular/material/tabs';
 import { NumericDirective } from 'src/app/shared/Directives/Numeric/numeric.directive';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatMenuModule,
     MatSliderModule,
     MatTabsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule
   ]
 })
 export class CustomerModule { }

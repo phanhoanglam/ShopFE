@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  countQuantity: number = 1;
 
-  ngOnInit() {
+  constructor(private titleService:Title) { 
+    this.titleService.setTitle("Detail");
+  }
+
+  ngOnInit() {}
+
+  increase(){
+    this.countQuantity = this.countQuantity + 1;
+  }
+
+  reduction(){
+    this.countQuantity = this.countQuantity - 1;
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,9 @@ import * as $ from 'jquery';
 })
 export class HomeComponent {
 
-  constructor(){}
+  constructor(private titleService:Title){
+    this.titleService.setTitle("Trang chủ");
+  }
 
   // @ViewChild(CarouselComponent, {static: false}) carousel: CarouselComponent;
 
