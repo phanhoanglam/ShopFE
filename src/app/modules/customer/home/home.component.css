@@ -233,13 +233,6 @@
   width: 161px;
 }
 
-.trans-0-4 {
-  -webkit-transition: all 0.4s;
-  -o-transition     : all 0.4s;
-  -moz-transition   : all 0.4s;
-  transition        : all 0.4s;
-}
-
 .container {
   display  : block;
   height   : 65%;
@@ -308,10 +301,6 @@
   left            : 0;
   opacity         : 0;
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-.block2>.block2-img>.trans-0-4 {
-  transition: all 0.4s;
 }
 
 .block2>.block2-img>.block2-overlay:hover {

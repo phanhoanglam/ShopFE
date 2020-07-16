@@ -18,7 +18,9 @@ import { ScrollToTopComponent } from 'src/app/shared/Directives/ScrollToTop/scro
 import { ProductComponent } from './product/product.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NumericDirective } from 'src/app/shared/Directives/Numeric/numeric.directive';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     ScrollToTopComponent,
     TreeMenuComponent,
     ProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    NumericDirective
   ],
   imports: [
     CommonModule,
@@ -44,7 +47,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSelectModule,
     MatMenuModule,
     MatSliderModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule
   ]
 })
 export class CustomerModule { }

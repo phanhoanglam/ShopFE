@@ -14,7 +14,7 @@
         </div>
         <ul class="main_menu_mobile">
             <li *ngFor="let item of navItems" class="zoom dropdown">
-                <span *ngIf="item.children && item.children.length > 0">
+                <!-- <span *ngIf="item.children && item.children.length > 0">
                     <a [routerLink]="item.link" routerLinkActive="nav-active"
                         [matMenuTriggerFor]="menu.childMenu" #rla="routerLinkActive">{{ item.displayName }}
                         <mat-icon>expand_more</mat-icon></a>
@@ -22,7 +22,7 @@
                 </span>
                 <span *ngIf="!item.children || item.children.length === 0">
                     <a [routerLink]="item.link" routerLinkActive="nav-active" #rla="routerLinkActive">{{ item.displayName }}</a>
-                </span>
+                </span> -->
             </li>
         </ul>
     </mat-drawer>

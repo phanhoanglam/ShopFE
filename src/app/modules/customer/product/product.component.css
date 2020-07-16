@@ -126,10 +126,6 @@ ul, li {
   overflow: hidden;
 }
 
-.pos-relative {
-  position: relative;
-}
-
 .size6 {
   width: 100%;
   height: 58px;
@@ -211,16 +207,6 @@ button {
   width: 100%;
 }
 
-.block2-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  opacity: 0;
-}
-
 .block2-btn-addcart {
   position: absolute;
   left: 50%;
@@ -276,28 +262,16 @@ button {
 
 .block2>.block2-img>.block2-overlay {
   position: absolute;
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.block2-overlay {
-  width: 88% !important;
-  max-height: 81%;
-  text-align: center;
-}
-
-.block2>.block2-img>.block2-overlay {
-  position: absolute;
-  width: 100% !important;
-  max-height: 100% !important;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+.block2>.block2-img>.block2-overlay:hover {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 768px) {
@@ -307,20 +281,12 @@ button {
   .container1 {
     width: 750px !important;
   }
-  .block2-overlay {
-    max-width: 84% !important;
-    max-height: 75% !important;
-  }
   .s-text3 {
     font-family: Montserrat-Regular;
     color: #555555;
     line-height: 1.5;
     font-size: 17px;
     text-align: center;
-  }
-  .block2>.block2-img>.block2-overlay {
-    max-height: 100% !important;
-    max-width: 100% !important;
   }
   .block2-btn-addcart {
     left: 50% !important;
@@ -331,9 +297,6 @@ button {
 }
 
 @media only screen and (max-width: 426px) {
-  .block2>.block2-img>.block2-overlay {
-    max-height: 100% !important;
-  }
   .w-size1 {
     width: 175px !important;
   }
@@ -345,20 +308,6 @@ button {
 @media only screen and (max-width: 1024px) {
   .container1 {
     max-width: 1000px !important;
-  }
-  .block2-overlay {
-    width: 88% !important;
-    max-height: 81%;
-    text-align: center;
-  }
-  .block2>.block2-img>.block2-overlay {
-    position: absolute;
-    width: 100% !important;
-    max-height: 100% !important;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -419,25 +368,10 @@ button {
   padding-bottom: 5px;
 }
 
-.block2-overlay {
-  position: absolute;
-  width: 90%;
-  height: 84%;
-  top: 0;
-  left: 16px;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.block2-overlay:hover {
-  opacity: 1;
-}
-
 .block2-overlay:hover .block2-btn-addcart {
   bottom: 20px;
 }
-
-.block2-overlay:hover .block2-btn-addwishlist, .block2-overlay:hover .block2-btn-towishlist {
+ .block2-btn-addwishlist, .block2-btn-towishlist {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
@@ -464,24 +398,6 @@ button {
   max-width: 1500px;
   position: relative;
   animation: banner1 2s ease;
-}
-
-.block2>.block2-img>.block2-overlay {
-  position: absolute;
-  width: 100% !important;
-  height: 100% !important;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.block2>.block2-img>.trans-0-4 {
-  transition: all 0.4s;
-}
-
-.block2>.block2-img>.block2-overlay:hover {
-  opacity: 1;
 }
 
 .row {
