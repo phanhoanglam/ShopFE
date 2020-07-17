@@ -1,0 +1,130 @@
+.main_container {
+    background-image: url('../../../../assets/images/ImageProduct/imgBackground.jpg');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main {
+    padding: 5em 0 0;
+    text-align: center;
+}
+
+.login-agileits-bottom {
+    margin-top:1.6em;
+    text-align: center; 
+}
+.login-agileits-bottom h6 {
+    font-size: 1em;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+.login-agileits-bottom h6 a {
+    color: #fff;
+    transition: 0.5s all ;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.login-agileits-bottom h6 a:hover{
+    color: #ff4c4c; 
+}
+
+.login-agileits-bottom1 {
+    margin-top: 1.6em;
+    text-align: center;
+}
+
+.login-agileits-bottom1 h3 {
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 4px;
+}
+
+.social_icons.agileinfo {
+    margin: 2% 0% 5%;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.top-links li {
+    margin-left: 5px;
+    display: inline-block;
+}
+
+ul.top-links li a {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul.top-links li a i.fa {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+}
+
+.d-logo {
+    margin-bottom: 30px;
+}
+
+@media(max-width:768px) {
+    .d-logo {
+        display: none;
+    }
+    .main {
+        padding: 5em 0 0;
+    }
+    .login-agileits-bottom1 {
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width:384px) {
+    .l-linkedin {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:800px){
+    .login-agileits-bottom h6 { 
+		letter-spacing: 3px;
+	}
+}
+
+@media(max-width:568px){
+    .login-agileits-bottom h6 {
+		font-size: 0.9em; 
+		letter-spacing: 3px;
+	}
+}
+
+@media(max-width:320px){  
+	.login-agileits-bottom h6 {
+		font-size: 0.75em;
+		letter-spacing: 2px;
+	}
+	.login-agileits-bottom {
+		margin-top: 0.8em;
+	}
+}

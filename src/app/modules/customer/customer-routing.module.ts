@@ -7,16 +7,6 @@ import { CustomerComponent } from './customer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 
-// const routes: Routes = [
-//   {
-//     path: '',
-//     component: CustomerComponent,
-//     children:{
-//       { path: '', pathMatch: 'full', redirectTo: 'profil' },
-//     }
-//   }
-// ];
-
 @NgModule({
   imports: [
     CommonModule,
@@ -24,8 +14,8 @@ import { HomeComponent } from './home/home.component';
       path: '',
       component: CustomerComponent,
       children: [
-        { path: '', pathMatch: 'full', redirectTo: 'home' },
-        { path: 'home', component: HomeComponent },
+        { path: '', pathMatch: 'full', redirectTo: 'trang-chu' },
+        { path: 'trang-chu', component: HomeComponent },
         {
           path: 'category', children: [
             { path: 'product', component: ProductComponent },

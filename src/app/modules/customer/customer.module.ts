@@ -46,7 +46,6 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatMenuModule,
     MatSliderModule,
     MatTabsModule,
     MatExpansionModule,
