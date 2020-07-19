@@ -22,6 +22,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { NumericDirective } from 'src/app/shared/Directives/Numeric/numeric.directive';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
+import { OwlModule } from 'ngx-owl-carousel';
+import { SlideCarouselComponent } from 'src/app/shared/Directives/slide-carousel/slide-carousel.component';
+import { TreeMenuMobileComponent } from 'src/app/shared/Directives/tree-menu-mobile/tree-menu-mobile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { FormsModule } from '@angular/forms';
     TreeMenuComponent,
     ProductComponent,
     ProductDetailComponent,
-    NumericDirective
+    NumericDirective,
+    SlideCarouselComponent,
+    TreeMenuMobileComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +54,8 @@ import { FormsModule } from '@angular/forms';
     MatSliderModule,
     MatTabsModule,
     MatExpansionModule,
-    FormsModule
+    FormsModule,
+    OwlModule
   ]
 })
 export class CustomerModule { }

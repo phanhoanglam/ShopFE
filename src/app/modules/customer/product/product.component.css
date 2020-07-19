@@ -324,6 +324,12 @@ button {
   text-align: center;
 }
 
+.block2-txt :hover{
+  color: red !important;
+}
+
+.block2-btn-addcart :hover{background-color: red;}
+
 @media (max-width: 480px) {
   .nav-item {
     padding: 0 0;

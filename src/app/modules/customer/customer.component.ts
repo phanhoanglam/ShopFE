@@ -16,12 +16,12 @@ export class CustomerComponent implements OnInit  {
     this.navItems = [
       {
         displayName: 'Trang chủ',
-        link: "/home",
+        link: "/trang-chu",
         children: [],
       },
       {
         displayName: 'Sản phẩm',
-        // link: "/category",
+        link: "/category",
         children: [
           {
             displayName: 'Speakers',
@@ -69,6 +69,7 @@ export class CustomerComponent implements OnInit  {
           },
           {
             displayName: 'Sessions',
+            link: "/1",
             children: [
               {
                 displayName: 'Delight your Organization',

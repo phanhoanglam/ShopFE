@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     this.navItems = [
       {
         displayName: 'Trang chủ',
-        link: "/home",
+        link: "/trang-chu",
         children: [],
       },
       {
@@ -85,6 +85,7 @@ export class HeaderComponent implements OnInit {
           },
           {
             displayName: 'Sessions',
+            link: "/1",
             children: [
               {
                 displayName: 'Delight your Organization',

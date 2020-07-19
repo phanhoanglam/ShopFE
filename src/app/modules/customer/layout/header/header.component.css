@@ -111,6 +111,10 @@
     transition: all 0.3s;
 }
 
+.wrap_menu{
+    margin-left: 100px;
+}
+
 .logo {
     display: block;
     position: absolute;

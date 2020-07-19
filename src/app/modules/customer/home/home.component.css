@@ -523,6 +523,10 @@
   color           : white;
 }
 
+.block2-txt :hover{
+  color: red !important;
+}
+
 .trans-0-4 {
   -webkit-transition: all 0.4s;
   -o-transition     : all 0.4s;

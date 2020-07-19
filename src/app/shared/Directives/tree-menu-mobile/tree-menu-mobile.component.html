@@ -1,0 +1,21 @@
+<ul class="top-level-menu">
+    <li *ngFor="let item of nodes">
+        <a href="#">{{ item.displayName }}</a> <mat-icon *ngIf="item.children.length > 0" class="iconMenu">expand_more</mat-icon>
+        <div *ngIf="item.children.length > 0">
+          <ng-container *ngTemplateOutlet="tree; context: { $implicit: item.children, class: 'second-level-menu' }">
+          </ng-container>
+        </div>
+    </li>
+  </ul>
+  
+  <ng-template #tree let-array let-class="class">
+    <ul [ngClass]="class">
+      <li *ngFor="let child of array">
+        <a href="#">{{ child.displayName }}</a>
+        <div *ngIf="child.children">
+          <ng-container *ngTemplateOutlet="tree; context: { $implicit: child.children, class: 'third-level-menu' }">
+          </ng-container>
+        </div>
+      </li>
+    </ul>
+  </ng-template>

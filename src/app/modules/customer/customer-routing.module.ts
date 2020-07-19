@@ -17,9 +17,8 @@ import { HomeComponent } from './home/home.component';
         { path: '', pathMatch: 'full', redirectTo: 'trang-chu' },
         { path: 'trang-chu', component: HomeComponent },
         {
-          path: 'category', children: [
-            { path: 'product', component: ProductComponent },
-            { path: 'product-detail', component: ProductDetailComponent}
+          path: 'category', component: ProductComponent, children: [
+            { path: 'product-detail', component: ProductDetailComponent }
           ]
         },
         { path: 'about', component: AboutComponent },

@@ -60,25 +60,22 @@
     list-style: none;
     padding   : 0;
     margin    : 0;
+    display: grid;
 }
 
 .top-level-menu>li {
-    position: relative;
-    float   : left;
-    height  : 30px;
-    width   : 113px;
+    height  : 100%;
+    width: 100%;
+    border-top: 1px solid #ececec;
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
 }
 
 .top-level-menu li:hover>div>ul {
     /* On hover, display the next level's menu */
     display: inline;
 }
-
-.iconMenu{
-    position: absolute;
-    margin-top: 2px;
-}
-
 
 /* Menu Link Styles */
 
@@ -92,21 +89,10 @@
     padding        : 0 0 0 10px;
 
     /* Make the link cover the entire list item-container */
-    display    : block;
     line-height: 30px;
+    margin-left: 20px;
 }
 
 .top-level-menu a:hover {
     color: #000000;
-}
-
-@media only screen and (max-width: 1024px) {
-    .top-level-menu>li {
-        width: 105px;
-    }
-}
-
-.nav-active {
-    color: red !important;
-    text-decoration: none;
 }
