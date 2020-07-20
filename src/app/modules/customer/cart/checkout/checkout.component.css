@@ -1,0 +1,20 @@
+.cart{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.d-flex{
+    max-width: 700px;
+    display: flex;
+    border: 1px solid #999999;
+    border-radius: 9px;
+    padding: 20px
+}
+
+.example-form-field{
+    width: 100%;
+}
+
+.row{
+    display: block;
+}

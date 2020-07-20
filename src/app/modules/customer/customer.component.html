@@ -4,6 +4,11 @@
         <div class="menu-mobile">
             <app-tree-menu-mobile [nodes]="navItems"></app-tree-menu-mobile>
         </div>
+        <div class="d-out">
+            <div class="out">
+                <a (click)="close()">Thoát</a>
+            </div>
+        </div>
     </mat-drawer>
     <mat-drawer-content>
         <div>

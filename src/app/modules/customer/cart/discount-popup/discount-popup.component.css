@@ -1,0 +1,60 @@
+.flex-m {
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.flex-w {
+    display: flex;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.m-r-10 {
+    margin-right: 10px;
+}
+.size11 {
+    width: 260px;
+    height: 45px;
+}
+
+.bo4 {
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+}
+
+.p-l-22 {
+    padding-left: 22px;
+}
+.p-r-22 {
+    padding-right: 22px;
+}
+.sizefull {
+    width: 100%;
+    height: 100%;
+}
+
+.s-text7 {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.8;
+}
+input {
+    outline: none;
+    border: none !important;
+}
+
+.mat-dialog-actions {
+    justify-content: flex-end !important;
+}
+
+.mat-raised-button{
+    background: black;
+    color: white;
+    margin-left: 20px;
+}
+
+.action-btn :hover {
+    background-color: red;
+}

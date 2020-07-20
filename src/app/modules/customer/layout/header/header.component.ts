@@ -1,6 +1,7 @@
 import { element } from 'protractor';
 import { Component, OnInit, Output, EventEmitter, HostListener, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,10 @@ export class HeaderComponent implements OnInit {
   @ViewChild('toggleButton', { static: false }) toggleButton: ElementRef;
   @ViewChild('cart', { static: false }) cart: ElementRef;
 
-  constructor(private renderer: Renderer2) {
+  constructor(
+    private renderer: Renderer2,
+    private router: Router,
+  ) {
     this.renderer.listen('window', 'click', (e: Event) => {
 
       if (this.cart !== undefined) {
@@ -149,5 +153,15 @@ export class HeaderComponent implements OnInit {
 
   showMenuNav() {
     this.show.emit(true);
+  }
+
+  viewCart() {
+    this.router.navigate(['/gio-hang']);
+    this.isShowCart = false;
+  }
+
+  checkout() {
+    this.router.navigate(['/gio-hang/thanh-toan']);
+    this.isShowCart = false;
   }
 }

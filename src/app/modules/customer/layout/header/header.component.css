@@ -49,6 +49,10 @@
     font-family: cursive;
 }
 
+.header-cart-wrapbtn > a {
+    cursor: pointer;
+}
+
 .menu_mobile {
     left: 0px;
     display: flex;

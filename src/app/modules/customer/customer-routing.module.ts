@@ -1,3 +1,5 @@
+import { CheckoutComponent } from './cart/checkout/checkout.component';
+import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductComponent } from './product/product.component';
 import { NgModule } from '@angular/core';
@@ -17,11 +19,21 @@ import { HomeComponent } from './home/home.component';
         { path: '', pathMatch: 'full', redirectTo: 'trang-chu' },
         { path: 'trang-chu', component: HomeComponent },
         {
-          path: 'category', component: ProductComponent, children: [
+          path: 'category', children: [
+            { path: '', component: ProductComponent },
             { path: 'product-detail', component: ProductDetailComponent }
           ]
         },
+        {
+          path: 'product-detail', component: ProductDetailComponent
+        },
         { path: 'about', component: AboutComponent },
+        {
+          path: 'gio-hang', children: [
+            { path: '', component: CartComponent },
+            { path: 'thanh-toan', component: CheckoutComponent }
+          ]
+        },
       ]
     }]),
   ],

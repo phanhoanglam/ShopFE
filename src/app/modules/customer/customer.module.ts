@@ -25,6 +25,11 @@ import { FormsModule } from '@angular/forms';
 import { OwlModule } from 'ngx-owl-carousel';
 import { SlideCarouselComponent } from 'src/app/shared/Directives/slide-carousel/slide-carousel.component';
 import { TreeMenuMobileComponent } from 'src/app/shared/Directives/tree-menu-mobile/tree-menu-mobile.component';
+import { CartComponent } from './cart/cart.component';
+import { DiscountPopupComponent } from './cart/discount-popup/discount-popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CheckoutComponent } from './cart/checkout/checkout.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,10 @@ import { TreeMenuMobileComponent } from 'src/app/shared/Directives/tree-menu-mob
     ProductDetailComponent,
     NumericDirective,
     SlideCarouselComponent,
-    TreeMenuMobileComponent
+    TreeMenuMobileComponent,
+    CartComponent,
+    DiscountPopupComponent,
+    CheckoutComponent,
   ],
   imports: [
     CommonModule,
@@ -55,7 +63,11 @@ import { TreeMenuMobileComponent } from 'src/app/shared/Directives/tree-menu-mob
     MatTabsModule,
     MatExpansionModule,
     FormsModule,
-    OwlModule
+    MatDialogModule,
+    MatCardModule
+  ],
+  entryComponents: [
+    DiscountPopupComponent
   ]
 })
 export class CustomerModule { }
