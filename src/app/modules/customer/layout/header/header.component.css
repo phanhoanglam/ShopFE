@@ -150,6 +150,12 @@
     text-decoration: none;
 }
 
+.header-cart-wrapbtn :hover{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
 .main_menu_mobile>li {
     display: block;
     position: relative;

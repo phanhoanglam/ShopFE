@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModuleModule } from './shared/share-module/shared-module/shared-module.module';
+import { CustomerModule } from './modules/customer/customer.module';
 
 
 @NgModule({
@@ -14,6 +16,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    SharedModuleModule,
+    CustomerModule
+  ],
+  exports: [
+    SharedModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
