@@ -1,7 +1,7 @@
 <section class="cart bgwhite p-t-70 p-b-100">
     <div class="wrapper">
         <div class="row row-container">
-            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+            <div style="margin-bottom: 30px;" class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                 <div>
                     <h4>Đơn hàng của bạn</h4>
                 </div>
@@ -16,32 +16,67 @@
                         <tbody>
                             <tr>
                                 <td class="content-sp">
-                                    Đặc trị Viêm xoang - Viêm mũi dị ứng Trần Kim Huyền					 
+                                    Đặc trị Viêm xoang - Viêm mũi dị ứng Trần Kim Huyền
                                 </td>
                                 <td class="content-price">
-                                    350.000 đ				 
+                                    350.000 đ
                                 </td>
                             </tr>
                             <tr>
                                 <td class="content-sp">
-                                    Đặc trị Viêm xoang - Viêm mũi dị ứng Trần Kim Huyền					 
+                                    Đặc trị Viêm xoang - Viêm mũi dị ứng Trần Kim Huyền
                                 </td>
                                 <td class="content-price">
-                                    350.000 đ				 
+                                    350.000 đ
                                 </td>
                             </tr>
                             <tr>
                                 <td class="content-sp">
-                                    Đặc trị Viêm xoang - Viêm mũi dị ứng Trần Kim Huyền					 
+                                    Đặc trị Viêm xoang - Viêm mũi dị ứng Trần Kim Huyền
                                 </td>
                                 <td class="content-price">
-                                    350.000 đ				 
+                                    350.000 đ
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th class="tfoot-th">Tạm tính</th>
+                                <th class="total-price tfoot-th">180.000 đ</th>
+                            </tr>
+                            <tr class="none-border">
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr class="ship-title">
+                                                <th>Giao hàng</th>
+
+                                            </tr>
+                                            <tr class="ship-option none-border">
+                                                <td>
+                                                    <ul>
+                                                        <li><input type="radio" id="fast" name="giaohang"
+                                                                checked /><label class="lbl-fast" for="fast">Giao hàng
+                                                                nhanh (ước tính): </label> <span class="estimate"> 20.000đ</span></li>
+                                                        <li><input type="radio" id="saving" name="giaohang" /><label
+                                                                class="lbl-fast" for="saving">Giao hàng tiết
+                                                                kiệm (ước tính): </label> <span class="estimate"> 20.000đ</span>
+                                                        </li>
+                                                        <li><input type="radio" id="free" name="giaohang" /><label
+                                                                class="lbl-fast" for="free">Giao tại cửa hàng</label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="none-border"> 
+                                <span class="sp-size1">Bạn đã có mã giảm giá?</span><a (click)="showDiscount()" class="a-size2">Ấn vào đây để nhập mã</a>
+                            </tr>
+                            <tr>
+                                <th class="tfoot-th">Tổng</th>
                                 <th class="total-price tfoot-th">180.000 đ</th>
                             </tr>
                         </tfoot>
@@ -101,7 +136,7 @@
                             </select>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-payment">
-                            <label>Phường, Xã & Thị trấn *</label>
+                            <label>Ghi chú đơn hàng</label>
                             <textarea class="textarea-payment" rows="5"></textarea>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-payment">

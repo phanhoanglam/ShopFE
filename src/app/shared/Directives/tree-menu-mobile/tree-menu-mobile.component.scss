@@ -1,4 +1,4 @@
-@import '../../../../theme.scss';
+@import "../../../../theme.scss";
 
 :host {
   display: flex;
@@ -11,7 +11,7 @@
   }
   &:hover,
   &:focus {
-    >.mat-list-item:not(.expanded) {
+    > .mat-list-item:not(.expanded) {
       background-color: mat-color($app-primary, 100) !important;
     }
   }
@@ -25,4 +25,21 @@
   .routeIcon {
     margin-right: 40px;
   }
+}
+
+.a-size {
+  padding-left: 0px;
+  font-weight: bold;
+  color: #999999;
+  font-family: cursive;
+}
+
+.mat-icon {
+  line-height: 0;
+}
+
+.tree-mobile {
+  border-top: 1px solid #ececec;
+  padding: 10px;
+  padding-left: 45px;
 }

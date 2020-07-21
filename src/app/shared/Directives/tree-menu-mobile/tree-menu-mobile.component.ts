@@ -24,10 +24,8 @@ export class TreeMenuMobileComponent implements OnInit {
   ngOnInit() {
     this.navService.currentUrl.subscribe((url: string) => {
       if (this.item.link && url) {
-        // console.log(`Checking '/${this.item.link}' against '${url}'`);
         this.expanded = url.indexOf(`/${this.item.link}`) === 0;
         this.ariaExpanded = this.expanded;
-        // console.log(`${this.item.link} is expanded: ${this.expanded}`);
       }
     });
   }

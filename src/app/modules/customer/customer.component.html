@@ -1,8 +1,10 @@
 <mat-drawer-container class="example-container main_container">
-    <mat-drawer #drawer mode="over" opened="false" style="position: fixed;">
+    <mat-drawer #drawer mode="over" opened="false" class="mat-menu">
         <a class="logo" href="#"><img class="logoImg" src="../../../../../assets/images/icons/logo.png" /></a>
-        <div class="menu-mobile">
-            <app-tree-menu-mobile *ngFor="let item of navItems" [item]="item"></app-tree-menu-mobile>
+        <div class="wrap-menu">
+            <div class="menu-mobile">
+                <app-tree-menu-mobile class="tree-mobile" *ngFor="let item of navItems" [item]="item"></app-tree-menu-mobile>
+            </div>
         </div>
         <div class="d-out">
             <div class="out">

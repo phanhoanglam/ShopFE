@@ -45,6 +45,11 @@
     text-decoration: none;
 }
 
+.mat-menu {
+    position: fixed;
+    width: 45%;
+}
+
 @media only screen and (max-width: 426px) {
     .drawer {
         width: 100% !important;
@@ -57,11 +62,17 @@
     .header-icons {
         display: flex !important;
     }
+    .mat-menu {
+        width: 79%;
+    }
 }
 
 @media only screen and (max-width: 375px) {
     .header-icons-noti {
         right: 42px !important;
+    }
+    .mat-menu {
+        width: 100%;
     }
 }
 
@@ -151,4 +162,9 @@
     border-radius: 20px;
     font-weight: bold;
     width: 100px;
+}
+
+.tree-mobile {
+    border-top: 1px solid #ececec;
+    padding: 15px;
 }

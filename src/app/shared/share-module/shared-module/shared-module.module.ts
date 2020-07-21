@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatMenuModule, MatIconModule, MatSidenavModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatSliderModule, MatTabsModule, MatExpansionModule, MatDialogModule, MatCardModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
-import { TreeMenuMobileComponent } from '../../Directives/tree-menu-mobile/tree-menu-mobile.component';
-import { TreeMenuComponent } from '../../Directives/tree-menu/tree-menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceProxies } from '../../service-proxies/service-proxies';
+import { httpInterceptorProviders } from '../../Interceptor/interceptorIndex';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TreeMenuComponent } from '../../Directives/tree-menu/tree-menu.componen
     FormsModule,
     MatDialogModule,
     MatCardModule,
+    HttpClientModule
   ],
   exports: [
     CommonModule,
@@ -38,8 +40,9 @@ import { TreeMenuComponent } from '../../Directives/tree-menu/tree-menu.componen
     MatExpansionModule,
     FormsModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
-  providers: []
+  providers: [httpInterceptorProviders]
 })
 export class SharedModuleModule { }

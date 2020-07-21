@@ -11,6 +11,12 @@
     .header {
         height: 81px !important;
     }
+    .cart-desktop {
+        display: inline;
+    }
+    .cart-mobile {
+        display: inline;
+    }
 }
 
 @media only screen and (min-width: 769px) {
@@ -26,12 +32,17 @@
         z-index: 1100;
         box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
     }
+    
 }
 
 @media only screen and (max-width: 426px) {
     .logo{
         display: none !important;
     }
+}
+
+.cart-mobile{
+    display: none;
 }
 
 .header {
@@ -202,6 +213,7 @@
 
 .header-icon1 {
     height: 100%;
+    outline: none;
 }
 
 .linedivide1 {
