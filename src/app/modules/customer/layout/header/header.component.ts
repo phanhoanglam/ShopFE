@@ -2,6 +2,7 @@ import { element } from 'protractor';
 import { Component, OnInit, Output, EventEmitter, HostListener, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 import { Router } from '@angular/router';
+import { NavService } from 'src/app/shared/Directives/Nav/nav.service';
 
 @Component({
   selector: 'app-header',
@@ -21,6 +22,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private renderer: Renderer2,
     private router: Router,
+    public navService: NavService
   ) {
     this.renderer.listen('window', 'click', (e: Event) => {
 

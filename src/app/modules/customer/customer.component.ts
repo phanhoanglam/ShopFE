@@ -1,6 +1,7 @@
 import { HeaderComponent } from './layout/header/header.component';
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { MatDrawer } from '@angular/material';
+import { NavService } from 'src/app/shared/Directives/Nav/nav.service';
 
 @Component({
   selector: 'app-customer',
@@ -8,9 +9,11 @@ import { MatDrawer } from '@angular/material';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit  {
-  @ViewChild('drawer', {static: false}) drawer: MatDrawer;
+  @ViewChild('drawer', {static: false}) drawer: ElementRef;
   navItems: any[];
-  constructor() { }
+  constructor(
+    public navService: NavService
+  ) { }
 
   ngOnInit() {
     this.navItems = [
@@ -113,11 +116,7 @@ export class CustomerComponent implements OnInit  {
     ];
   }
 
-  close(){
-    this.drawer.toggle(false);
-  }
-
-  onShow(event: boolean) {
-    this.drawer.toggle(event);
+  ngAfterViewInit() {
+    this.navService.drawer = this.drawer;
   }
 }
