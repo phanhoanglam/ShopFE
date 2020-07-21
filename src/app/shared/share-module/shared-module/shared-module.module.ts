@@ -5,8 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { TreeMenuMobileComponent } from '../../Directives/tree-menu-mobile/tree-menu-mobile.component';
 import { TreeMenuComponent } from '../../Directives/tree-menu/tree-menu.component';
 
-
-
 @NgModule({
   declarations: [
   ],
@@ -24,7 +22,7 @@ import { TreeMenuComponent } from '../../Directives/tree-menu/tree-menu.componen
     MatExpansionModule,
     FormsModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
   ],
   exports: [
     CommonModule,
@@ -41,6 +39,7 @@ import { TreeMenuComponent } from '../../Directives/tree-menu/tree-menu.componen
     FormsModule,
     MatDialogModule,
     MatCardModule
-  ]
+  ],
+  providers: []
 })
 export class SharedModuleModule { }

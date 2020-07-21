@@ -17,6 +17,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductComponent } from './product/product.component';
+import { NavService } from 'src/app/shared/Directives/Nav/nav.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ProductComponent } from './product/product.component';
   ],
   entryComponents: [
     DiscountPopupComponent
-  ]
+  ],
+  providers: [NavService]
 })
 export class CustomerModule { }

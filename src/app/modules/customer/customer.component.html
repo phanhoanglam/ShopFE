@@ -1,18 +1,18 @@
 <mat-drawer-container class="example-container main_container">
-    <mat-drawer #drawer mode="over" class="drawer" style="position: fixed;">
+    <mat-drawer #drawer mode="over" opened="false" style="position: fixed;">
         <a class="logo" href="#"><img class="logoImg" src="../../../../../assets/images/icons/logo.png" /></a>
         <div class="menu-mobile">
-            <app-tree-menu-mobile [nodes]="navItems"></app-tree-menu-mobile>
+            <app-tree-menu-mobile *ngFor="let item of navItems" [item]="item"></app-tree-menu-mobile>
         </div>
         <div class="d-out">
             <div class="out">
-                <a (click)="close()">Thoát</a>
+                <a (click)="navService.closeNav()">Thoát</a>
             </div>
         </div>
     </mat-drawer>
     <mat-drawer-content>
         <div>
-            <app-header (show)="onShow($event)"></app-header>
+            <app-header (click)="navService.openNav()"></app-header>
             <router-outlet></router-outlet>
             <app-footer></app-footer>
             <app-scroll-to-top></app-scroll-to-top>
