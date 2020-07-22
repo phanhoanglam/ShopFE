@@ -67,6 +67,7 @@
     float   : left;
     height  : 30px;
     width   : 113px;
+    text-align: center;
 }
 
 .top-level-menu li:hover>div>ul {

@@ -19,13 +19,13 @@ import { HomeComponent } from './home/home.component';
         { path: '', pathMatch: 'full', redirectTo: 'trang-chu' },
         { path: 'trang-chu', component: HomeComponent },
         {
-          path: 'category', children: [
+          path: 'danh-muc', children: [
             { path: '', component: ProductComponent },
-            { path: 'product-detail', component: ProductDetailComponent }
+            { path: ':meta-title', component: ProductComponent }
           ]
         },
         {
-          path: 'product-detail', component: ProductDetailComponent
+          path: 'san-pham/:meta-title', component: ProductDetailComponent
         },
         { path: 'about', component: AboutComponent },
         {
@@ -34,6 +34,7 @@ import { HomeComponent } from './home/home.component';
             { path: 'thanh-toan', component: CheckoutComponent }
           ]
         },
+        { path: '**', component: HomeComponent }
       ]
     }]),
   ],

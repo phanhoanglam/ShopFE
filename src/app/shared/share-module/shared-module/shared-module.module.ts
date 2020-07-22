@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatMenuModule, MatIconModule, MatSidenavModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatSliderModule, MatTabsModule, MatExpansionModule, MatDialogModule, MatCardModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ServiceProxies } from '../../service-proxies/service-proxies';
 import { httpInterceptorProviders } from '../../Interceptor/interceptorIndex';
 
 @NgModule({

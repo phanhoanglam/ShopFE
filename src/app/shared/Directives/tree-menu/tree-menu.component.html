@@ -1,8 +1,8 @@
 <ul class="top-level-menu">
   <li *ngFor="let item of nodes">
-      <a [routerLink]="item.link" routerLinkActive="nav-active">{{ item.displayName }} <mat-icon *ngIf="item.children.length > 0" class="iconMenu">expand_more</mat-icon></a>
-      <div *ngIf="item.children.length > 0">
-        <ng-container *ngTemplateOutlet="tree; context: { $implicit: item.children, class: 'second-level-menu' }">
+      <a [routerLink]="item.metatitle" routerLinkActive="nav-active">{{ item.name }} <mat-icon *ngIf="item.categoryDtos?.length > 0" class="iconMenu">expand_more</mat-icon></a>
+      <div *ngIf="item.categoryDtos?.length > 0">
+        <ng-container *ngTemplateOutlet="tree; context: { $implicit: item.categoryDtos, class: 'second-level-menu' }">
         </ng-container>
       </div>
   </li>
@@ -11,9 +11,9 @@
 <ng-template #tree let-array let-class="class">
   <ul [ngClass]="class">
     <li *ngFor="let child of array">
-      <a [routerLink]="child.link" routerLinkActive="nav-active">{{ child.displayName }}</a>
-      <div *ngIf="child.children">
-        <ng-container *ngTemplateOutlet="tree; context: { $implicit: child.children, class: 'third-level-menu' }">
+      <a [routerLink]="child.metatitle" routerLinkActive="nav-active">{{ child.name }}</a>
+      <div *ngIf="child.categoryDtos">
+        <ng-container *ngTemplateOutlet="tree; context: { $implicit: child.categoryDtos, class: 'third-level-menu' }">
         </ng-container>
       </div>
     </li>

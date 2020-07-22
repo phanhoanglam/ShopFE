@@ -30,18 +30,17 @@
 </ng-template> -->
 
 <div>
-  <a mat-list-item  class="menu-list-item a-size">
-    {{item.displayName}}
-
+  <a mat-list-item [routerLink]="item.metatitle" (click)="navService.closeNav()" routerLinkActive="nav-active" class="menu-list-item a-size">
+    {{item.name}}
   </a>
-  <span fxFlex *ngIf="item.children && item.children.length">
+  <span fxFlex *ngIf="item.categoryDtos && item.categoryDtos.length">
     <span fxFlex></span>
     <mat-icon (click)="onItemSelected(item)"
-      [ngClass]="{'active': item.link ? router.isActive(item.link, true): false, 'expanded': expanded}">
+      [ngClass]="{'active': item.metatitle ? router.isActive(item.metatitle, true): false, 'expanded': expanded}">
       {{expanded  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
   </span>
 </div>
 <div *ngIf="expanded">
-  <app-tree-menu-mobile class="tree-mobile" *ngFor="let child of item.children" [item]="child" >
+  <app-tree-menu-mobile class="tree-mobile" *ngFor="let child of item.categoryDtos" [item]="child" >
   </app-tree-menu-mobile>
 </div>
