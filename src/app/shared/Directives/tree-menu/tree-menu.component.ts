@@ -7,7 +7,7 @@ import { MatMenuTrigger } from '@angular/material';
   styleUrls: ['./tree-menu.component.css']
 })
 export class TreeMenuComponent implements OnInit {
-  @Input() nodes;
+  @Input() nodes = [];
 
   constructor() { }
 

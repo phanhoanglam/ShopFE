@@ -1,47 +1,15 @@
-<!-- <ul class="top-level-menu">
-  <li *ngFor="let item of nodes">
-    <a>{{ item.displayName }}</a>
-    <label class="l-icon" for="menu" *ngIf="item.children.length > 0"> 
-      <input type="checkbox" id="menu" class="menuItem" />
-      <mat-icon class="iconMenu">expand_more</mat-icon>
-    </label>
-
-    <div *ngIf="item.children.length > 0">
-      <ng-container *ngTemplateOutlet="tree; context: { $implicit: item.children, class: 'second-level-menu' }">
-      </ng-container>
-    </div>
-  </li>
-</ul>
-
-<ng-template #tree let-array let-class="class">
-  <ul [ngClass]="class">
-    <li *ngFor="let child of array">
-      <a>{{ child.displayName }}</a>
-      <label class="l-icon" for="menu" *ngIf="child.children.length > 0"> 
-        <input type="checkbox" id="menu" class="menuItem" />
-        <mat-icon class="iconMenu">expand_more</mat-icon>
-      </label>
-      <div *ngIf="child.children.length > 0">
-        <ng-container *ngTemplateOutlet="tree; context: { $implicit: child.children, class: 'third-level-menu' }">
-        </ng-container>
-      </div>
-    </li>
-  </ul>
-</ng-template> -->
-
 <div>
-  <a mat-list-item  class="menu-list-item a-size">
-    {{item.displayName}}
-
+  <a mat-list-item [routerLink]="item.metatitle" (click)="navService.closeNav()" routerLinkActive="nav-active" class="menu-list-item a-size">
+    {{item.name}}
   </a>
-  <span fxFlex *ngIf="item.children && item.children.length">
+  <span fxFlex *ngIf="item.categoryDtos && item.categoryDtos.length">
     <span fxFlex></span>
     <mat-icon (click)="onItemSelected(item)"
-      [ngClass]="{'active': item.link ? router.isActive(item.link, true): false, 'expanded': expanded}">
+      [ngClass]="{'active': item.metatitle ? router.isActive(item.metatitle, true): false, 'expanded': expanded}">
       {{expanded  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
   </span>
 </div>
 <div *ngIf="expanded">
-  <app-tree-menu-mobile class="tree-mobile" *ngFor="let child of item.children" [item]="child" >
+  <app-tree-menu-mobile class="tree-mobile" *ngFor="let child of item.categoryDtos" [item]="child" >
   </app-tree-menu-mobile>
 </div>

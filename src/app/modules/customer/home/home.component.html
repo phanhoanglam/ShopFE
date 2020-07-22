@@ -2,7 +2,7 @@
 	<div id="demo" class="carousel slide" data-ride="carousel">
 		<!-- The slideshow -->
 		<div class="carousel-inner">
-			<div class="carousel-item active">
+			<div *ngFor="let slide of slides" class="carousel-item" [ngClass]="slide.active == true ? 'active' : ''">
 				<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 					<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15"
 						data-appear="fadeInDown">
@@ -21,50 +21,8 @@
 						</a>
 					</div>
 				</div>
-				<img src="https://www.oid.ok.gov/wp-content/uploads/2020/04/sheltering-guidelines-1720x570-1.jpg"
-					width="100%" alt="Los Angeles">
-			</div>
-			<div class="carousel-item">
-				<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-					<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15"
-						data-appear="fadeInDown">
-						Women Collection 2018
-					</span>
-
-					<h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-						New arrivals
-					</h2>
-
-					<div class="wrap-btn-slide1 w-size1 animated visible-false button-slide" data-appear="zoomIn">
-						<!-- Button -->
-						<a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-							Shop Now
-						</a>
-					</div>
-				</div>
-				<img src="https://www.oid.ok.gov/wp-content/uploads/2020/05/Infoforseniors-1720x570-1.jpg" width="100%"
-					alt="Chicago">
-			</div>
-			<div class="carousel-item">
-				<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-					<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15"
-						data-appear="fadeInDown">
-						Women Collection 2018
-					</span>
-
-					<h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-						New arrivals
-					</h2>
-
-					<div class="wrap-btn-slide1 w-size1 animated visible-false button-slide" data-appear="zoomIn">
-						<!-- Button -->
-						<a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-							Shop Now
-						</a>
-					</div>
-				</div>
-				<img src="https://www.6degreesto.com/wp-content/uploads/2017/02/Charlie-Foran-Guardian-1720x570.jpg"
-					width="100%" alt="New York">
+				<img [src]="slide.path"
+					width="100%" [alt]="slide.alt">
 			</div>
 		</div>
 		<!-- Left and right controls -->
@@ -78,80 +36,21 @@
 
 	<section class="banner p-t-40 p-b-40">
 		<div class="container1">
+			<div class="sec-title p-b-60">
+				<h3 class="m-text5 t-center">
+					Danh mục
+				</h3>
+			</div>
 			<div class="row bannerrow">
-				<div class="col-sm-5 col-md-8 col-lg-4 m-l-r-auto">
+				<div class="col-sm-5 col-md-8 col-lg-4 m-l-r-auto" *ngFor="let category of categories">
 					<!-- block1 -->
 					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="../../../../assets/images/ImageProduct/banner-02.jpg" alt="IMG-BENNER">
+						<img [src]="category.pathImage" alt="IMG-BENNER">
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Dresses
-							</a>
-						</div>
-					</div>
-
-					<!-- block1 -->
-					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="../../../../assets/images/ImageProduct/banner-05.jpg" alt="IMG-BENNER">
-
-						<div class="block1-wrapbtn w-size2">
-							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Sunglasses
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-5 col-md-8 col-lg-4 m-l-r-auto">
-					<!-- block1 -->
-					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="../../../../assets/images/ImageProduct/banner-03.jpg" alt="IMG-BENNER">
-
-						<div class="block1-wrapbtn w-size2">
-							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Watches
-							</a>
-						</div>
-					</div>
-
-					<!-- block1 -->
-					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="../../../../assets/images/ImageProduct/banner-07.jpg" alt="IMG-BENNER">
-
-						<div class="block1-wrapbtn w-size2">
-							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Footerwear
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-5 col-md-8 col-lg-4 m-l-r-auto">
-					<!-- block1 -->
-					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="../../../../assets/images/ImageProduct/banner-04.jpg" alt="IMG-BENNER">
-
-						<div class="block1-wrapbtn w-size2">
-							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Bags
-							</a>
-						</div>
-					</div>
-
-					<!-- block2 -->
-					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="../../../../assets/images/ImageProduct/banner-05.jpg" alt="IMG-BENNER">
-
-						<div class="block1-wrapbtn w-size2">
-							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Sunglasses
+							<a [routerLink]="category.metatitle" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								{{ category.name }}
 							</a>
 						</div>
 					</div>

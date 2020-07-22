@@ -1,3 +1,4 @@
+import { CategoryServiceProxies } from './../../shared/service-proxies/service-proxies';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NumericDirective } from 'src/app/shared/Directives/Numeric/numeric.directive';
@@ -18,7 +19,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductComponent } from './product/product.component';
 import { NavService } from 'src/app/shared/Directives/Nav/nav.service';
-import { ServiceProxies } from 'src/app/shared/service-proxies/service-proxies';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,6 @@ import { ServiceProxies } from 'src/app/shared/service-proxies/service-proxies';
   entryComponents: [
     DiscountPopupComponent
   ],
-  providers: [NavService, ServiceProxies]
+  providers: [NavService, CategoryServiceProxies]
 })
 export class CustomerModule { }

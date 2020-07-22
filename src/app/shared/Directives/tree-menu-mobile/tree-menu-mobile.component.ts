@@ -1,3 +1,4 @@
+import { category } from './../../model/category';
 import { Component, OnInit, Input, ViewChild, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavService } from '../Nav/nav.service';
@@ -11,7 +12,7 @@ import { NavItem } from '../Nav/nav-item';
 export class TreeMenuMobileComponent implements OnInit {
   expanded: boolean;
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
-  @Input() item: NavItem;
+  @Input() item: category;
   @Input() depth: number;
 
   constructor(public navService: NavService,
@@ -23,19 +24,19 @@ export class TreeMenuMobileComponent implements OnInit {
 
   ngOnInit() {
     this.navService.currentUrl.subscribe((url: string) => {
-      if (this.item.link && url) {
-        this.expanded = url.indexOf(`/${this.item.link}`) === 0;
+      if (this.item.metatitle && url) {
+        this.expanded = url.indexOf(`/${this.item.metatitle}`) === 0;
         this.ariaExpanded = this.expanded;
       }
     });
   }
 
-  onItemSelected(item: NavItem) {
-    if (!item.children || !item.children.length) {
-      this.router.navigate([item.link]);
+  onItemSelected(item: category) {
+    if (!item.categoryDtos || !item.categoryDtos.length) {
+      this.router.navigate([item.metatitle]);
       this.navService.closeNav();
     }
-    if (item.children && item.children.length) {
+    if (item.categoryDtos && item.categoryDtos.length) {
       this.expanded = !this.expanded;
     }
   }

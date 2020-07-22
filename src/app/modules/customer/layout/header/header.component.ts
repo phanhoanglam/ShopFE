@@ -1,8 +1,12 @@
+import { NavItem } from './../../../../shared/Directives/Nav/nav-item';
+import { category } from './../../../../shared/model/category';
+import { CategoryServiceProxies } from './../../../../shared/service-proxies/service-proxies';
 import { element } from 'protractor';
 import { Component, OnInit, Output, EventEmitter, HostListener, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 import { Router } from '@angular/router';
 import { NavService } from 'src/app/shared/Directives/Nav/nav.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,20 +16,22 @@ import { NavService } from 'src/app/shared/Directives/Nav/nav.service';
 export class HeaderComponent implements OnInit {
   isShowCart: boolean = false;;
   @Output() show = new EventEmitter<boolean>();
-  navItems: any[];
+  navItems: NavItem[] = [];
   windowScrolled: boolean;
+  subscriptions: Subscription = new Subscription();
+  category: category[] = [];
 
   @ViewChild(MatMenuTrigger, { static: false }) trigger: MatMenuTrigger;
   @ViewChild('toggleButton', { static: false }) toggleButton: ElementRef;
   @ViewChild('cart', { static: false }) cart: ElementRef;
 
   constructor(
+    private categoryServiceProxy: CategoryServiceProxies,
     private renderer: Renderer2,
     private router: Router,
     public navService: NavService
   ) {
     this.renderer.listen('window', 'click', (e: Event) => {
-
       if (this.cart !== undefined) {
         if (e.target !== this.toggleButton.nativeElement && !this.cart.nativeElement.contains(e.target)) {
           this.isShowCart = false;
@@ -35,104 +41,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navItems = [
-      {
-        displayName: 'Trang chủ',
-        link: "/trang-chu",
-        children: [],
-      },
-      {
-        displayName: 'Sản phẩm',
-        link: "/category",
-        children: [
-          {
-            displayName: 'Speakers',
-            link: "/category/product",
-            children: [
-              {
-                displayName: 'Michael Prentice',
-                link: "/b",
-                children: [
-                  {
-                    displayName: 'Delight your Organization',
-                    link: "/c",
-                    children: []
-                  }
-                ]
-              },
-              {
-                displayName: 'Stephen Fluin',
-                link: "/e",
-                children: [
-                  {
-                    displayName: 'What\'s up with the Web?',
-                    link: "/f",
-                    children: []
-                  }
-                ]
-              },
-              {
-                displayName: 'Mike Brocchi',
-                link: "/g",
-                children: [
-                  {
-                    displayName: 'My ally, the CLI',
-                    link: "/h",
-                    children: []
-                  },
-                  {
-                    displayName: 'Become an Angular Tailor',
-                    link: "/j",
-                    children: []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            displayName: 'Sessions',
-            link: "/1",
-            children: [
-              {
-                displayName: 'Delight your Organization',
-                link: "/k",
-                children: []
-              },
-              {
-                displayName: 'What\'s up with the Web?',
-                link: "/l",
-                children: []
-              },
-              {
-                displayName: 'My ally, the CLI',
-                link: "/z",
-                children: []
-              },
-              {
-                displayName: 'Become an Angular Tailor',
-                link: "/x",
-                children: []
-              }
-            ]
-          },
-        ]
-      },
-      {
-        displayName: 'Hàng mới',
-        link: "/m",
-        children: []
-      },
-      {
-        displayName: 'Trợ giúp',
-        link: "/about",
-        children: [],
-      },
-      {
-        displayName: 'Liên hệ',
-        link: "/contact",
-        children: [],
-      },
-    ];
+    this.categoryServiceProxy.getAll().subscribe((res: category[]) => {
+      this.category = res;
+    });
   }
 
   @HostListener("window:scroll", [])
@@ -165,5 +76,9 @@ export class HeaderComponent implements OnInit {
   checkout() {
     this.router.navigate(['/gio-hang/thanh-toan']);
     this.isShowCart = false;
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.unsubscribe();
   }
 }
